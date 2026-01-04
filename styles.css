@@ -448,3 +448,17 @@ footer a:hover {
   height: 350px;
   border: 0;
 }
+
+.lang-toggle {
+  color: var(--green-dark);
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+  
+.lang-toggle:hover {
+  transform: scale(1.15);
+}
