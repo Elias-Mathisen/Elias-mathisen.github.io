@@ -1,10 +1,14 @@
 function disableScroll() {
+  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.paddingRight = scrollBarWidth + "px";
   document.body.classList.add("no-scroll");
 }
 
 function enableScroll() {
+  document.body.style.paddingRight = "";
   document.body.classList.remove("no-scroll");
 }
+
 
 const images = document.querySelectorAll(".gallery img");
 const lightbox = document.getElementById("lightbox");
