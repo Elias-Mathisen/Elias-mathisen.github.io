@@ -112,3 +112,28 @@ lightbox.addEventListener("click", (e) => {
     lightbox.style.display = "none";
   }
 });
+
+const utleieItems = document.querySelectorAll(".utleie-item img");
+const utleieLightbox = document.getElementById("utleieLightbox");
+const utleieLightboxImg = utleieLightbox.querySelector("img");
+const utleieCopyright = utleieLightbox.querySelector(".copyright");
+const utleieClose = utleieLightbox.querySelector(".close");
+
+utleieItems.forEach(img => {
+  img.addEventListener("click", () => {
+    utleieLightbox.style.display = "flex";
+    utleieLightboxImg.src = img.src;
+    utleieLightboxImg.alt = img.alt;
+    utleieCopyright.textContent = img.alt;
+  });
+});
+
+utleieClose.addEventListener("click", () => {
+  utleieLightbox.style.display = "none";
+});
+
+utleieLightbox.addEventListener("click", (e) => {
+  if (e.target === utleieLightbox) {
+    utleieLightbox.style.display = "none";
+  }
+});
