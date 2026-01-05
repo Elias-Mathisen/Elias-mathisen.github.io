@@ -13,7 +13,6 @@ img {
 
 .no-scroll {
   overflow: hidden;
-  height: 100vh;
 }
 
 
@@ -23,7 +22,6 @@ img {
 
 html {
   scroll-behavior: smooth;
-  scrollbar-gutter: stable;
 }
 
 body {
@@ -517,4 +515,3 @@ footer a:hover {
     max-height: 70vh;  
   }
 }
-
