@@ -45,6 +45,19 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    if (lightbox.style.display === "flex") {
+      lightbox.style.display = "none";
+    }
+
+    if (utleieLightbox.style.display === "flex") {
+      utleieLightbox.style.display = "none";
+    }
+  }
+});
+
+
 lightbox.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
