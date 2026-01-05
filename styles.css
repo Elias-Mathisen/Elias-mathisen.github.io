@@ -11,6 +11,12 @@ img {
   -webkit-user-drag: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
 * {
   box-sizing: border-box;
 }
