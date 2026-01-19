@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="f3aad1da-7504-480d-9aee-94f87704c6f7"></script>
   <meta name="og:type" content="website" />
   <meta property="og:title" content="Brårudskjulet" />
   <meta property="og:description"
@@ -40,10 +39,10 @@
       </div>
 
       <div class="nav-links">
-        <a href="#galleri">Gallery</a>
-        <a href="#utleie">Equipment rental</a>
-        <a href="#om-skjulet">About the hide</a>
-        <a href="#kontakt">Contact</a>
+        <a href="#galleri" class="nav-link" data-target="galleri">Gallery</a>
+        <a href="#utleie" class="nav-link" data-target="utleie">Equipment rental</a>
+        <a href="#om-skjulet" class="nav-link" data-target="om-skjulet">About</a>
+        <a href="#kontakt" class="nav-link" data-target="kontakt">Contact</a>
       </div>
       <div class="socials">
         <a href="no/" class="lang-toggle">NO</a>
@@ -98,7 +97,8 @@
       </div>
       <div class="utleie-item">
         <h3>Canon 400mm f2.8 EF II L USM</h3>
-        <img src="../src/Div/Lens.png" alt="Canon EF 400 mm f/2.8L IS II USM by John Torcasio, CC BY‑SA 4.0 (via Wikimedia Commons)">
+        <img src="../src/Div/Lens.png"
+          alt="Canon EF 400 mm f/2.8L IS II USM by John Torcasio, CC BY‑SA 4.0 (via Wikimedia Commons)">
       </div>
     </div>
 
@@ -165,12 +165,26 @@
         You can also use the form below.
       </p>
 
-      <form id="contactForm">
-        <input type="text" id="subject" placeholder="Subject" required>
-        <input type="tel" id="phone" placeholder="Phone number (optional)">
-        <textarea id="message" placeholder="Message" required></textarea>
-        <button type="submit">Send email</button>
-      </form>
+      <div class="cal-wrapper">
+        <div class="cal-landscape">
+          <div id="my-cal-inline-rental-request-brarudskjulet-one-day"></div>
+        </div>
+
+        <div class="cal-overlay"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "rental-request-brarudskjulet-one-day", { origin: "https://app.cal.com" });
+
+      Cal.ns["rental-request-brarudskjulet-one-day"]("inline", {
+        elementOrSelector: "#my-cal-inline-rental-request-brarudskjulet-one-day",
+        config: { "layout": "month_view", "theme": "light" },
+        calLink: "braarudskjulet/rental-request-brarudskjulet-one-day",
+      });
+
+      Cal.ns["rental-request-brarudskjulet-one-day"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#7fb8a0" }, "dark": { "cal-brand": "#fafafa" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
     </div>
   </section>
 
@@ -196,17 +210,14 @@
     <button class="next">&#10095;</button>
   </div>
 
-<div class="utleie-lightbox" id="utleieLightbox">
-  <span class="close">&times;</span>
-  <img src="" alt="">
-  <div class="copyright"></div>
-</div>
-
+  <div class="utleie-lightbox" id="utleieLightbox">
+    <span class="close">&times;</span>
+    <img src="" alt="">
+    <div class="copyright"></div>
+  </div>
 
   <script src="script.js"></script>
 
 </body>
 
 </html>
-
-
