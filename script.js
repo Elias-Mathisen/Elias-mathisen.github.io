@@ -9,7 +9,6 @@ function enableScroll() {
   document.body.classList.remove("no-scroll");
 }
 
-
 const images = document.querySelectorAll(".gallery img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox.querySelector("img");
@@ -41,7 +40,7 @@ document.querySelector(".next").onclick = () => {
   lightboxImg.src = images[currentIndex].src;
 };
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", e => {
   if (lightbox.style.display !== "flex") return;
 
   if (e.key === "ArrowRight") {
@@ -55,30 +54,31 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-lightbox.addEventListener("touchstart", (e) => {
+lightbox.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
 });
 
-lightbox.addEventListener("touchend", (e) => {
+lightbox.addEventListener("touchend", e => {
   endX = e.changedTouches[0].clientX;
   const diff = startX - endX;
 
   if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      currentIndex = (currentIndex + 1) % images.length;
-    } else {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-    }
+    currentIndex =
+      diff > 0
+        ? (currentIndex + 1) % images.length
+        : (currentIndex - 1 + images.length) % images.length;
+
     lightboxImg.src = images[currentIndex].src;
   }
 });
 
-lightbox.addEventListener("click", (e) => {
+lightbox.addEventListener("click", e => {
   if (e.target === lightbox) {
     lightbox.style.display = "none";
     enableScroll();
   }
 });
+
 
 const utleieItems = document.querySelectorAll(".utleie-item img");
 const utleieLightbox = document.getElementById("utleieLightbox");
@@ -101,66 +101,58 @@ utleieClose.addEventListener("click", () => {
   enableScroll();
 });
 
-utleieLightbox.addEventListener("click", (e) => {
+utleieLightbox.addEventListener("click", e => {
   if (e.target === utleieLightbox) {
     utleieLightbox.style.display = "none";
     enableScroll();
   }
 });
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
-    if (lightbox.style.display === "flex") {
-      lightbox.style.display = "none";
-    }
-
-    if (utleieLightbox.style.display === "flex") {
-      utleieLightbox.style.display = "none";
-    }
-
+    lightbox.style.display = "none";
+    utleieLightbox.style.display = "none";
     enableScroll();
   }
 });
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const subject = document.getElementById("subject").value;
-  const phone = document.getElementById("phone").value;
-  const message = document.getElementById("message").value;
-
-  const body = `Telefon: ${phone || "Ikke oppgitt"}
-
-${message}
-`;
-
-  window.location.href =
-    `mailto:photo.espen@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
 
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('active');
+  document.querySelector(".nav-links").classList.toggle("active");
 }
 
-document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+document.querySelector(".hamburger").addEventListener("click", toggleMenu);
 
-document.getElementById("logo").addEventListener("click", function () {
+document.getElementById("logo").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+  history.replaceState(null, "", location.pathname);
 });
 
-document.querySelectorAll(".nav-link").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const id = btn.dataset.target;
-    document.getElementById(id).scrollIntoView({
-      behavior: "smooth"
-    });
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const targetId = link.dataset.target;
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.querySelector(".nav-links").classList.remove("active");
+    history.replaceState(null, "", location.pathname);
   });
 });
 
-window.addEventListener('hashchange', () => {
-  history.replaceState(null, '', location.pathname + location.search);
-});
 
-document.addEventListener('contextmenu', function (e) {
+document.addEventListener("contextmenu", e => {
   e.preventDefault();
 });
+
+setInterval(() => {
+  document.querySelectorAll("img").forEach(img => {
+    if (img.src.includes("app.cal.com/api/logo")) {
+      img.remove();
+    }
+  });
+}, 1000);
