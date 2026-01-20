@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Page not found</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --beige: #f5f1e8;
+      --green: #7fb8a0;
+      --green-dark: #5a9b82;
+      --text: #2f2f2f;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(180deg, var(--beige), var(--white));
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 3rem 1.5rem;
+    }
+
+    .logo {
+      width: 160px;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .error-code {
+      font-size: clamp(4rem, 10vw, 6rem);
+      color: var(--green-dark);
+      margin: 0;
+      line-height: 1;
+    }
+
+    .title {
+      font-size: 2rem;
+      margin: 1rem 0 0.5rem;
+      color: var(--green-dark);
+    }
+
+    .description {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.9rem 1.6rem;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <img src="/src/Utenbg.png" alt="Brårudskjulet logo" class="logo">
+
+    <p class="error-code">404</p>
+    <h1 class="title">Page not found</h1>
+
+    <p class="description">
+      The page you’re looking for doesn’t exist or may have been moved.
+      Let’s get you back to a quiet place.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to home</a>
+    </div>
+
+    <footer>
+      © 2026 Brårudskjulet
+    </footer>
+  </main>
+
+</body>
+</html>
