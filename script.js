@@ -12,46 +12,56 @@ function enableScroll() {
 const images = document.querySelectorAll(".gallery img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox.querySelector("img");
+const lightboxCaption = lightbox.querySelector(".lightbox-caption");
 let currentIndex = 0;
 let startX = 0;
-let endX = 0;
+
+function show(i) {
+  currentIndex = (i + images.length) % images.length;
+  const img = images[currentIndex];
+  lightboxImg.classList.add("swapping");
+  setTimeout(() => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = `${currentIndex + 1} / ${images.length}`;
+    lightboxImg.classList.remove("swapping");
+  }, 150);
+}
+
+function openLightbox(i) {
+  show(i);
+  lightbox.classList.add("open");
+  disableScroll();
+  lightbox.querySelector(".close").focus();
+}
+
+function closeLightbox() {
+  if (!lightbox.classList.contains("open")) return;
+  lightbox.classList.remove("open");
+  enableScroll();
+  images[currentIndex].focus();
+}
 
 images.forEach((img, i) => {
-  img.onclick = () => {
-    currentIndex = i;
-    lightboxImg.src = img.src;
-    lightbox.style.display = "flex";
-    disableScroll();
-  };
+  img.tabIndex = 0;
+  img.addEventListener("click", () => openLightbox(i));
+  img.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openLightbox(i);
+    }
+  });
 });
 
-document.querySelector(".close").onclick = () => {
-  lightbox.style.display = "none";
-  enableScroll();
-};
-
-document.querySelector(".prev").onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-};
-
-document.querySelector(".next").onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-};
+lightbox.querySelector(".close").onclick = closeLightbox;
+lightbox.querySelector(".prev").onclick = () => show(currentIndex - 1);
+lightbox.querySelector(".next").onclick = () => show(currentIndex + 1);
 
 document.addEventListener("keydown", e => {
-  if (lightbox.style.display !== "flex") return;
-
-  if (e.key === "ArrowRight") {
-    currentIndex = (currentIndex + 1) % images.length;
-    lightboxImg.src = images[currentIndex].src;
-  }
-
-  if (e.key === "ArrowLeft") {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentIndex].src;
-  }
+  if (!lightbox.classList.contains("open")) return;
+  if (e.key === "ArrowRight") show(currentIndex + 1);
+  if (e.key === "ArrowLeft") show(currentIndex - 1);
+  if (e.key === "Escape") closeLightbox();
 });
 
 lightbox.addEventListener("touchstart", e => {
@@ -59,62 +69,43 @@ lightbox.addEventListener("touchstart", e => {
 });
 
 lightbox.addEventListener("touchend", e => {
-  endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    currentIndex =
-      diff > 0
-        ? (currentIndex + 1) % images.length
-        : (currentIndex - 1 + images.length) % images.length;
-
-    lightboxImg.src = images[currentIndex].src;
-  }
+  const diff = startX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) show(currentIndex + (diff > 0 ? 1 : -1));
 });
 
 lightbox.addEventListener("click", e => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
-    enableScroll();
-  }
+  if (e.target === lightbox) closeLightbox();
 });
 
+const topbar = document.querySelector(".topbar");
+const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 10);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-const utleieItems = document.querySelectorAll(".utleie-item img");
-const utleieLightbox = document.getElementById("utleieLightbox");
-const utleieLightboxImg = utleieLightbox.querySelector("img");
-const utleieCopyright = utleieLightbox.querySelector(".copyright");
-const utleieClose = utleieLightbox.querySelector(".close");
-
-utleieItems.forEach(img => {
-  img.addEventListener("click", () => {
-    utleieLightbox.style.display = "flex";
-    utleieLightboxImg.src = img.src;
-    utleieLightboxImg.alt = img.alt;
-    utleieCopyright.textContent = img.alt;
-    disableScroll();
+// contact form: opens the visitor's email app with the request filled in, addressed to the hide
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const lines = [];
+    let name = "";
+    let message = "";
+    contactForm.querySelectorAll(".field").forEach(field => {
+      const input = field.querySelector("input, textarea");
+      const value = input.value.trim();
+      if (input.name === "name") name = value;
+      if (input.name === "message") message = value;
+      // label text without "(optional)" / "(valgfritt)"
+      else if (value) lines.push(`${field.querySelector("label").textContent.replace(/\s*\(.*\)/, "")}: ${value}`);
+    });
+    const subject = `${contactForm.dataset.subject} – ${name}`;
+    const body = `${message}\n\n${lines.join("\n")}`;
+    window.location.href = `mailto:${contactForm.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const status = contactForm.querySelector(".form-status");
+    status.textContent = contactForm.dataset.success;
+    status.className = "form-status ok";
   });
-});
-
-utleieClose.addEventListener("click", () => {
-  utleieLightbox.style.display = "none";
-  enableScroll();
-});
-
-utleieLightbox.addEventListener("click", e => {
-  if (e.target === utleieLightbox) {
-    utleieLightbox.style.display = "none";
-    enableScroll();
-  }
-});
-
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    lightbox.style.display = "none";
-    utleieLightbox.style.display = "none";
-    enableScroll();
-  }
-});
+}
 
 
 function toggleMenu() {
@@ -146,13 +137,6 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 
 document.addEventListener("contextmenu", e => {
-  e.preventDefault();
+  // still allow right-click paste in the contact form
+  if (!e.target.closest("form")) e.preventDefault();
 });
-
-setInterval(() => {
-  document.querySelectorAll("img").forEach(img => {
-    if (img.src.includes("app.cal.com/api/logo")) {
-      img.remove();
-    }
-  });
-}, 1000);

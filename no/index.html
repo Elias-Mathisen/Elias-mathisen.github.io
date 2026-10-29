@@ -45,7 +45,6 @@
 
       <div class="nav-links">
         <a href="#galleri" class="nav-link" data-target="galleri">Galleri</a>
-        <a href="#utleie" class="nav-link" data-target="utleie">Utleie av utstyr</a>
         <a href="#om-skjulet" class="nav-link" data-target="om-skjulet">Om skjulet</a>
         <a href="#kontakt" class="nav-link" data-target="kontakt">Kontakt</a>
       </div>
@@ -65,7 +64,7 @@
     </div>
   </nav>
 
-  <header>
+  <header class="hero">
     <img class="hero-logo" src="../src/Utenbg.png" alt="Logo">
     <h1>Brårudskjulet</h1>
     <p>
@@ -73,124 +72,99 @@
       Gardermoen flyplass. Et rolig og gjennomtenkt sted for nære møter med
       skogens rovfugler uten å forstyrre dyrene.
     </p>
+    <div class="hero-actions">
+      <a class="btn" href="#galleri">Se galleriet</a>
+      <a class="btn btn-ghost" href="#kontakt">Book en dag</a>
+    </div>
   </header>
 
   <section id="galleri">
+    <p class="eyebrow">Fra skjulet</p>
     <h2>Galleri</h2>
     <div class="gallery">
-      <img src="../src/Dyr/Hønsehauk_01-oktober+(1+av+1).jpg">
-      <img src="../src/Dyr/musvåk_01-oktober+(1+av+1).jpg">
-      <img src="../src/Dyr/spurbvehauk_08-oktober+(1+av+1).jpg">
-      <img src="../src/Dyr/spurvehauk_14-oktober+(1+av+1).jpg">
-      <img src="../src/Dyr/Spurvhauk_06-oktober+(1+av+1).jpg">
-      <img src="../src/Dyr/svartspett_01-oktober+(1+av+1)-2.jpg">
-    </div>
-  </section>
-
-  <section id="utleie">
-    <h2>Utleie av utstyr</h2>
-    <p class="utleie-intro">I tillegg til utleie av skjulet tilbyr vi noe fotoutstyr for utleie.</p>
-
-    <div class="utleie-grid">
-      <div class="utleie-item">
-        <h3>Canon R3</h3>
-        <img src="../src/Div/R3.png" alt="Canon EOS R3 by Harrison Jones, CC BY‑SA 4.0 (via Wikimedia Commons)">
-      </div>
-      <div class="utleie-item">
-        <h3>Canon R7</h3>
-        <img src="../src/Div/R7.png" alt="Photo of Canon EOS R7 by Henry Söderlund, CC BY 2.0 (via Wikimedia Commons)">
-      </div>
-      <div class="utleie-item">
-        <h3>Canon 400mm f2.8 EF II L USM</h3>
-        <img src="../src/Div/Lens.png"
-          alt="Canon EF 400 mm f/2.8L IS II USM by John Torcasio, CC BY‑SA 4.0 (via Wikimedia Commons)">
-      </div>
-    </div>
-
-    <div class="mentor">
-      <p>Vi tilbyr også mentor dag i skjulet med erfaren fotograf.</p>
-      <p>Ta kontakt for pris.</p>
+      <figure><img src="../src/Dyr/Hønsehauk_01-oktober+(1+av+1).jpg" alt="Hønsehauk" loading="lazy"></figure>
+      <figure><img src="../src/Dyr/musvåk_01-oktober+(1+av+1).jpg" alt="Musvåk" loading="lazy"></figure>
+      <figure><img src="../src/Dyr/spurbvehauk_08-oktober+(1+av+1).jpg" alt="Spurvehauk" loading="lazy"></figure>
+      <figure><img src="../src/Dyr/spurvehauk_14-oktober+(1+av+1).jpg" alt="Spurvehauk" loading="lazy"></figure>
+      <figure><img src="../src/Dyr/Spurvhauk_06-oktober+(1+av+1).jpg" alt="Spurvehauk" loading="lazy"></figure>
+      <figure><img src="../src/Dyr/svartspett_01-oktober+(1+av+1)-2.jpg" alt="Svartspett" loading="lazy"></figure>
     </div>
   </section>
 
   <section id="om-skjulet">
-    <h2 style="text-align:center;">Om Brårudskjulet</h2>
-    <p style="text-align:center;">
-      Brårudskjulet har 4 fotoluker, 4 sengeplasser, behagelige stoler og enkelt toalett.
-      Det blir oppvarmet med gassovn og det er muligheter for å koke vann på stormkjøkken.
-      Ettersom det ofte er besøk av kattugle, har vi montert lys utenfor skjulet slik at
-      fotografering om kveld/natt er mulig. Det blir fôret med ferskt kjøtt og frø hver dag
-      for å holde aktiviteten oppe. Det er ingen elektrisitet inne i skjulet.
-    </p>
+    <p class="eyebrow">Skjulet</p>
+    <h2>Om Brårudskjulet</h2>
+    <p class="about-intro">Brårudskjulet har 4 fotoluker, 4 sengeplasser, behagelige stoler og enkelt toalett. Det blir oppvarmet med gassovn og det er muligheter for å koke vann på stormkjøkken. Ettersom det ofte er besøk av kattugle, har vi montert lys utenfor skjulet slik at fotografering om kveld/natt er mulig. Det blir fôret med ferskt kjøtt og frø hver dag for å holde aktiviteten oppe. Det er solpanel som lyser opp uteplassen, men ingen elektrisitet i skjulet.</p>
 
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-location-dot"></i> Oppmøte
-    </h3>
-    <p style="text-align:center;">
-      Vi møter alle våre gjester på Joker Brårud (Vestsidavegen 885, 2162 Brårud) til avtalt tid.
-      Herfra guider vi inn til skjulet.
-    </p>
+    <div class="info-grid">
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <h3>Oppmøte</h3>
+        <p>Vi møter alle våre gjester på Joker Brårud (Vestsidavegen 885, 2162 Brårud) til avtalt tid. Herfra guider vi inn til skjulet.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-box-archive"></i></span>
+        <h3>Hva du trenger å ha med</h3>
+        <p>Kamerautstyr, sovepose, varme klær, innesko, hodelykt, mat, drikke og tisseflaske (for menn). Det finnes 2 gimbals i skjulet; ellers må du ta med eget utstyr.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-gavel"></i></span>
+        <h3>Regler</h3>
+        <p>Det er ikke lov å gå ut på fôrplassen som gjest, hverken ved ankomst eller avreise, og ikke oppholde seg utenfor skjulet når det er lyst ute (nulltoleranse, unntatt nødsituasjoner). Telefoner, iPads og lignende skal være på lydløs og lydnivået ellers lavt for å ikke skremme dyrene. Alkohol er tillatt i moderate mengder, husk lydnivå. Når du reiser, skal skjulet være i samme stand som ved ankomst.</p>
+      </article>
+    </div>
+
     <div class="map-wrapper">
       <iframe
         src="https://www.google.com/maps?q=Joker%20Br%C3%A5rud%20Vestsidavegen%20885%202162%20Br%C3%A5rud&output=embed&hl=no"
         width="600" height="450" style="border:0;" allowfullscreen=""
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
-
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-box-archive"></i> Hva du trenger å ha med
-    </h3>
-    <p style="text-align:center;">
-      Kamerautstyr, sovepose, varme klær, innesko, hodelykt, mat, drikke og tisseflaske (for menn).
-      Det finnes 2 gimbals i skjulet; ellers må du ta med eget utstyr.
-    </p>
-
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-gavel"></i> Regler
-    </h3>
-    <p style="text-align:center;">
-      Det er ikke lov å gå ut på fôrplassen som gjest, hverken ved ankomst eller avreise, og
-      ikke oppholde seg utenfor skjulet når det er lyst ute (nulltoleranse, unntatt nødsituasjoner).
-      Telefoner, iPads og lignende skal være på lydløs og lydnivået ellers lavt for å ikke skremme dyrene.
-      Alkohol er tillatt i moderate mengder, husk lydnivå. Når du reiser, skal skjulet være i samme stand som ved
-      ankomst.
-    </p>
   </section>
 
   <section id="kontakt">
-    <h2>Kontact & booking</h2>
+    <p class="eyebrow">Ta kontakt</p>
+    <h2>Kontakt &amp; booking</h2>
 
     <div class="contact-wrapper">
-      <p>
-        Du kan kontakte meg direkte på telefon på <strong>+47 458 40 337</strong>
-        eller på e-post på <strong>photo.espen@gmail.com
-        </strong>.
-        Du kan også bruke skjemaet nedenfor.
-      </p>
+      <p> Du kan kontakte meg direkte på telefon på <strong>+47 922 68 589</strong> eller på e-post på <strong>photo.espen@gmail.com</strong>. Du kan også bruke skjemaet nedenfor. </p>
 
-      <div class="cal-wrapper">
-        <div class="cal-landscape">
-          <div id="my-cal-inline-rental-request-brarudskjulet-one-day"></div>
+      <form class="contact-form" id="contact-form" data-to="photo.espen@gmail.com" data-subject="Bookingforespørsel"
+        data-success="E-postprogrammet ditt skal nå åpne seg med meldingen klar. Trykk send der. Skjer det ingenting, send en e-post til photo.espen@gmail.com.">
+        <div class="field">
+          <label for="cf-name">Navn</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="100" required>
         </div>
-
-        <div class="cal-overlay"></div>
-      </div>
-    </div>
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "rental-request-brarudskjulet-one-day", { origin: "https://app.cal.com" });
-
-      Cal.ns["rental-request-brarudskjulet-one-day"]("inline", {
-        elementOrSelector: "#my-cal-inline-rental-request-brarudskjulet-one-day",
-        config: { "layout": "month_view", "theme": "light" },
-        calLink: "braarudskjulet/rental-request-brarudskjulet-one-day",
-      });
-
-      Cal.ns["rental-request-brarudskjulet-one-day"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#7fb8a0" }, "dark": { "cal-brand": "#fafafa" } }, "hideEventTypeDetails": false, "layout": "month_view" });
-    </script>
+        <div class="field">
+          <label for="cf-email">E-post</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Telefon (valgfritt)</label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </div>
+        <div class="field">
+          <label for="cf-date">Ønsket dato (valgfritt)</label>
+          <input id="cf-date" name="date" type="date">
+        </div>
+        <div class="field field-wide">
+          <label for="cf-message">Melding</label>
+          <textarea id="cf-message" name="message" maxlength="1500" required placeholder="Fortell oss når du ønsker å komme, hvor mange dere er, og annet vi bør vite."></textarea>
+        </div>
+        <div class="field-wide form-footer">
+          <button type="submit">Send forespørsel <i class="fa-solid fa-paper-plane"></i></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </div>
   </section>
+  <section id="partnere">
+    <h2>Samarbeidspartnere</h2>
+    <a class="partner" href="https://biofoto.no/bli-medlem/" target="_blank" rel="noopener">
+      <img src="../src/Div/BioFoto.png" alt="BioFoto Norge" width="300" height="100">
+    </a>
+  </section>
+
   <footer>
     <p>© 2026 Brårudskjulet – Driftes av Jan Espen Dammen Mathisen <a
         href="https://www.instagram.com/photo_espen/"><strong>@photo_espen</strong></a></p>
@@ -204,21 +178,19 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox">
-    <button class="close">&times;</button>
-    <button class="prev">&#10094;</button>
-    <img src="">
-    <button class="next">&#10095;</button>
-  </div>
-
-  <div class="utleie-lightbox" id="utleieLightbox">
-    <span class="close">&times;</span>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="close" aria-label="Lukk">&times;</button>
+    <button class="prev" aria-label="Forrige bilde">&#10094;</button>
     <img src="" alt="">
-    <div class="copyright"></div>
+    <button class="next" aria-label="Neste bilde">&#10095;</button>
+    <p class="lightbox-caption"></p>
   </div>
 
 
   <script src="../script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../animations.js"></script>
 
 </body>
 

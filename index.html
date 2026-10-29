@@ -45,7 +45,6 @@
 
       <div class="nav-links">
         <a href="#galleri" class="nav-link" data-target="galleri">Gallery</a>
-        <a href="#utleie" class="nav-link" data-target="utleie">Equipment rental</a>
         <a href="#om-skjulet" class="nav-link" data-target="om-skjulet">About</a>
         <a href="#kontakt" class="nav-link" data-target="kontakt">Contact</a>
       </div>
@@ -62,7 +61,7 @@
     </div>
   </nav>
 
-  <header>
+  <header class="hero">
     <img class="hero-logo" src="src/Utenbg.png" alt="Logo">
     <h1>Brårudskjulet</h1>
     <p>
@@ -71,66 +70,47 @@
       place for close encounters with forest birds of prey, without disturbing
       the animals.
     </p>
+    <div class="hero-actions">
+      <a class="btn" href="#galleri">See the gallery</a>
+      <a class="btn btn-ghost" href="#kontakt">Book a day</a>
+    </div>
   </header>
 
   <section id="galleri">
+    <p class="eyebrow">From the hide</p>
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="src/Dyr/Hønsehauk_01-oktober+(1+av+1).jpg">
-      <img src="src/Dyr/musvåk_01-oktober+(1+av+1).jpg">
-      <img src="src/Dyr/spurbvehauk_08-oktober+(1+av+1).jpg">
-      <img src="src/Dyr/spurvehauk_14-oktober+(1+av+1).jpg">
-      <img src="src/Dyr/Spurvhauk_06-oktober+(1+av+1).jpg">
-      <img src="src/Dyr/svartspett_01-oktober+(1+av+1)-2.jpg">
-    </div>
-  </section>
-
-  <section id="utleie">
-    <h2>Equipment rental</h2>
-    <p class="utleie-intro">
-      In addition to renting out the hide, we also offer some photography equipment for rent.
-    </p>
-
-    <div class="utleie-grid">
-      <div class="utleie-item">
-        <h3>Canon R3</h3>
-        <img src="../src/Div/R3.png" alt="Canon EOS R3 by Harrison Jones, CC BY‑SA 4.0 (via Wikimedia Commons)">
-      </div>
-      <div class="utleie-item">
-        <h3>Canon R7</h3>
-        <img src="../src/Div/R7.png" alt="Photo of Canon EOS R7 by Henry Söderlund, CC BY 2.0 (via Wikimedia Commons)">
-      </div>
-      <div class="utleie-item">
-        <h3>Canon 400mm f2.8 EF II L USM</h3>
-        <img src="../src/Div/Lens.png"
-          alt="Canon EF 400 mm f/2.8L IS II USM by John Torcasio, CC BY‑SA 4.0 (via Wikimedia Commons)">
-      </div>
-    </div>
-
-    <div class="mentor">
-      <p>We also offer a mentor day in the hide with an experienced photographer.</p>
-      <p>Contact us for pricing.</p>
+      <figure><img src="src/Dyr/Hønsehauk_01-oktober+(1+av+1).jpg" alt="Goshawk" loading="lazy"></figure>
+      <figure><img src="src/Dyr/musvåk_01-oktober+(1+av+1).jpg" alt="Common buzzard" loading="lazy"></figure>
+      <figure><img src="src/Dyr/spurbvehauk_08-oktober+(1+av+1).jpg" alt="Sparrowhawk" loading="lazy"></figure>
+      <figure><img src="src/Dyr/spurvehauk_14-oktober+(1+av+1).jpg" alt="Sparrowhawk" loading="lazy"></figure>
+      <figure><img src="src/Dyr/Spurvhauk_06-oktober+(1+av+1).jpg" alt="Sparrowhawk" loading="lazy"></figure>
+      <figure><img src="src/Dyr/svartspett_01-oktober+(1+av+1)-2.jpg" alt="Black woodpecker" loading="lazy"></figure>
     </div>
   </section>
 
   <section id="om-skjulet">
-    <h2 style="text-align:center;">About Brårudskjulet</h2>
-    <p style="text-align:center;">
-      Brårudskjulet has 4 photography hatches, 4 sleeping places, comfortable chairs,
-      and a basic toilet. It is heated with a gas heater, and there are facilities
-      for boiling water using a camping stove. As tawny owls frequently visit the area,
-      we have installed lights outside the hide, making evening and night photography
-      possible. Fresh meat and seeds are provided daily to maintain activity.
-      There is no electricity inside the hide.
-    </p>
+    <p class="eyebrow">The hide</p>
+    <h2>About Brårudskjulet</h2>
+    <p class="about-intro">Brårudskjulet has 4 photography hatches, 4 sleeping places, comfortable chairs, and a basic toilet. It is heated with a gas heater, and there are facilities for boiling water using a camping stove. As tawny owls frequently visit the area, we have installed lights outside the hide, making evening and night photography possible. Fresh meat and seeds are provided daily to maintain activity. Solar panels light up the outdoor area, but there is no electricity in the hide.</p>
 
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-location-dot"></i> Meeting point
-    </h3>
-    <p style="text-align:center;">
-      We meet all our guests at Joker Brårud (Vestsidavegen 885, 2162 Brårud)
-      at the agreed time. From there, we guide you to the hide.
-    </p>
+    <div class="info-grid">
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <h3>Meeting point</h3>
+        <p>We meet all our guests at Joker Brårud (Vestsidavegen 885, 2162 Brårud) at the agreed time. From there, we guide you to the hide.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-box-archive"></i></span>
+        <h3>What to bring</h3>
+        <p>Camera equipment, sleeping bag, warm clothing, indoor shoes, headlamp, food, drinks, and a urine bottle (for men). There are 2 gimbals available in the hide; otherwise, you must bring your own equipment.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon"><i class="fa-solid fa-gavel"></i></span>
+        <h3>Rules</h3>
+        <p>Guests are not allowed to enter the feeding area, either upon arrival or departure, and must not stay outside the hide during daylight hours (zero tolerance, except in emergencies). Phones, iPads, and similar devices must be set to silent, and overall noise levels must be kept low to avoid disturbing the animals. Alcohol is permitted in moderate amounts, please be mindful of noise. Upon departure, the hide must be left in the same condition as when you arrived.</p>
+      </article>
+    </div>
 
     <div class="map-wrapper">
       <iframe
@@ -138,59 +118,50 @@
         width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-box-archive"></i> What to bring
-    </h3>
-    <p style="text-align:center;">
-      Camera equipment, sleeping bag, warm clothing, indoor shoes, headlamp,
-      food, drinks, and a urine bottle (for men).
-      There are 2 gimbals available in the hide; otherwise, you must bring your own equipment.
-    </p>
-
-    <h3 style="text-align:center;">
-      <i class="fa-solid fa-gavel"></i> Rules
-    </h3>
-    <p style="text-align:center;">
-      Guests are not allowed to enter the feeding area, either upon arrival or departure,
-      and must not stay outside the hide during daylight hours (zero tolerance, except in emergencies).
-      Phones, iPads, and similar devices must be set to silent, and overall noise levels must be kept low
-      to avoid disturbing the animals. Alcohol is permitted in moderate amounts, please be mindful of noise.
-      Upon departure, the hide must be left in the same condition as when you arrived.
-    </p>
   </section>
 
   <section id="kontakt">
-    <h2>Contact & booking</h2>
+    <p class="eyebrow">Get in touch</p>
+    <h2>Contact &amp; booking</h2>
 
     <div class="contact-wrapper">
-      <p>
-        You can contact me directly by phone at <strong>+47 458 40 337</strong>
-        or by email at <strong>photo.espen@gmail.com</strong>.
-        You can also use the form below.
-      </p>
+      <p> You can contact me directly by phone at <strong>+47 922 68 589</strong> or by email at <strong>photo.espen@gmail.com</strong>. You can also use the form below. </p>
 
-      <div class="cal-wrapper">
-        <div class="cal-landscape">
-          <div id="my-cal-inline-rental-request-brarudskjulet-one-day"></div>
+      <form class="contact-form" id="contact-form" data-to="photo.espen@gmail.com" data-subject="Booking request"
+        data-success="Your email app should now open with the message ready. Just press send there. If nothing happens, email us at photo.espen@gmail.com.">
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="100" required>
         </div>
-
-        <div class="cal-overlay"></div>
-      </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Phone (optional)</label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </div>
+        <div class="field">
+          <label for="cf-date">Preferred date (optional)</label>
+          <input id="cf-date" name="date" type="date">
+        </div>
+        <div class="field field-wide">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" maxlength="1500" required placeholder="Tell us when you would like to come, how many you are, and anything else we should know."></textarea>
+        </div>
+        <div class="field-wide form-footer">
+          <button type="submit">Send request <i class="fa-solid fa-paper-plane"></i></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </div>
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "rental-request-brarudskjulet-one-day", { origin: "https://app.cal.com" });
+  </section>
 
-      Cal.ns["rental-request-brarudskjulet-one-day"]("inline", {
-        elementOrSelector: "#my-cal-inline-rental-request-brarudskjulet-one-day",
-        config: { "layout": "month_view", "theme": "light" },
-        calLink: "braarudskjulet/rental-request-brarudskjulet-one-day",
-      });
-
-      Cal.ns["rental-request-brarudskjulet-one-day"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#7fb8a0" }, "dark": { "cal-brand": "#fafafa" } }, "hideEventTypeDetails": false, "layout": "month_view" });
-    </script>
-    </div>
+  <section id="partnere">
+    <h2>Partners</h2>
+    <a class="partner" href="https://biofoto.no/bli-medlem/" target="_blank" rel="noopener">
+      <img src="src/Div/BioFoto.png" alt="BioFoto Norge" width="300" height="100">
+    </a>
   </section>
 
   <footer>
@@ -208,20 +179,18 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox">
-    <button class="close">&times;</button>
-    <button class="prev">&#10094;</button>
-    <img src="">
-    <button class="next">&#10095;</button>
-  </div>
-
-  <div class="utleie-lightbox" id="utleieLightbox">
-    <span class="close">&times;</span>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="close" aria-label="Close">&times;</button>
+    <button class="prev" aria-label="Previous photo">&#10094;</button>
     <img src="" alt="">
-    <div class="copyright"></div>
+    <button class="next" aria-label="Next photo">&#10095;</button>
+    <p class="lightbox-caption"></p>
   </div>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
 
 </body>
 
